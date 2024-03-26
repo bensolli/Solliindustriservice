@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Navigation from './components/Navbar.js';
+//import { BrowserRouter, Routes, Route } from "react-router-dom";
+//import Allposts from "./components/Allposts.js";
+//import Onepost from "./components/Onepost.js";
+import Homepage from "./pages/Homepage.js";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+export default (props) => {
+  return ( 
+    <div>
+    <Navigation />
+    {props.children}
     </div>
   );
 }
 
+
+
+
+/*
+function App() {
+  return (
+    <BrowserRouter>
+    <div>
+      <Routes>
+        <Route Component={Allposts} path="/" exact />
+        <Route Component={Onepost} path="/:slug" />
+      </Routes>
+    </div>
+    </BrowserRouter>
+  );
+}
+
 export default App;
+*/
