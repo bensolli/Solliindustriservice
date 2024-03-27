@@ -2,12 +2,22 @@ import {defineField, defineType} from 'sanity'
 
 export default defineType({
   name: 'post',
-  title: 'Post',
+  title: 'Referanser',
   type: 'document',
   fields: [
     defineField({
+      name: 'companyName',
+      title: 'Navn på selskap',
+      type: 'string',
+    }),
+    defineField({
       name: 'title',
-      title: 'Title',
+      title: 'Navn på refeanseperson',
+      type: 'string',
+    }),
+    defineField({
+      name: 'workTitle',
+      title: 'Tittel på refeanseperson',
       type: 'string',
     }),
     defineField({
@@ -19,21 +29,34 @@ export default defineType({
         maxLength: 96,
       },
     }),
-    defineField({
+   /* defineField({
       name: 'author',
       title: 'Author',
       type: 'reference',
       to: {type: 'author'},
+    }),*/
+    defineField({
+      name: 'body',
+      title: 'Body',
+      type: 'blockContent',
     }),
     defineField({
       name: 'mainImage',
-      title: 'Main image',
+      title: 'Bilde av referanseperson',
       type: 'image',
       options: {
         hotspot: true,
       },
     }),
     defineField({
+      name: 'logoImage',
+      title: 'Bilde av logo til bedrift',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+   /* defineField({
       name: 'categories',
       title: 'Categories',
       type: 'array',
@@ -43,12 +66,8 @@ export default defineType({
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
-    }),
-    defineField({
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
-    }),
+    }),*/
+
   ],
 
   preview: {
