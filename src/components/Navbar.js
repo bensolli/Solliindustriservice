@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import '../Styles/Postcards.scss';
+import '../Styles/Navigation.scss';
 
 export default function Navbar() {
 

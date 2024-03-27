@@ -1,0 +1,12 @@
+.navigation-container{
+
+    
+    color: #0A1339;
+
+    &__nav-element{
+        padding: 20px;
+        display: inline-flex;
+        text-decoration: none;
+        list-style-type: none;
+    }
+}
