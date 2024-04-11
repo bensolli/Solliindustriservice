@@ -7,6 +7,14 @@ export const myStructure = (S) =>
         .child(
           S.document()
             .schemaType('siteSettings')
-            .documentId('siteSettings')),
-            ...S.documentTypeListItems().filter(listItem => !['siteSettings'].includes(listItem.getId()))
-    ])
+            .documentId('siteSettings')
+        ),
+      S.listItem()
+        .title('Front Page')
+        .child(
+          S.document()
+            .schemaType('frontPage')
+            .documentId('frontPage')
+        ),
+      ...S.documentTypeListItems().filter(listItem => !['siteSettings', 'frontPage'].includes(listItem.getId()))
+    ]);

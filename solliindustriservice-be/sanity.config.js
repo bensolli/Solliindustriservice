@@ -5,6 +5,7 @@ import {schemaTypes} from './schemaTypes'
 import {myStructure} from './deskStructure'
 
 
+
 export default defineConfig({
   name: 'default',
   title: 'Solliindustriservice-be',
@@ -12,7 +13,7 @@ export default defineConfig({
   projectId: 'opz08me3',
   dataset: 'production',
 
-  plugins: [structureTool({structure: myStructure,}), visionTool()],
+  plugins: [structureTool({structure: myStructure}), visionTool()],
 
   schema: {
     types: schemaTypes,

@@ -3,7 +3,7 @@ import Navigation from './components/Navbar.js';
 //import { BrowserRouter, Routes, Route } from "react-router-dom";
 //import Allposts from "./components/Allposts.js";
 //import Onepost from "./components/Onepost.js";
-import Homepage from "./pages/Homepage.js";
+//import Homepage from "./pages/Homepage.js";
 
 export default (props) => {
   return ( 
