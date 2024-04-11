@@ -1,12 +1,38 @@
 .navigation-container{
 
-    
-    color: #0A1339;
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    padding: 20px;
+    width: 80%;
+    margin: 0 10%;
+
+    &-list{
+        width: 80%;
+        position: absolute;
+        right: 0;
+        margin:0;
+        padding:0;
+        text-align: right;
+    }
 
     &__nav-element{
+        color: #0A1339;
         padding: 20px;
         display: inline-flex;
         text-decoration: none;
         list-style-type: none;
+    }
+
+    &__nav-element:hover{
+        text-decoration: underline;
+        transition: ease-in-out 0.3s;
+    }
+
+    &-logo{
+        width: 200px;
+        position: absolute;
+        left: 0;
     }
 }

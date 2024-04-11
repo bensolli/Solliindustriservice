@@ -1,17 +1,20 @@
 .card-wrapper{
     width: 100%;
-    background-color: aquamarine;
+    background: linear-gradient(354deg, #BAE0C2 -66.02%, rgba(184, 223, 192, 0.00) 75.89%);
+    min-height: 700px;
+    padding-top: 50%;
+    
 }
 
 .postCard{
     position: relative;
-    width: 80%;
-    margin: 10%;
+    width: 100%;
     display:inline-flex;
+
     div{
         width: 33%;
         margin: 10px;
-        padding: 50px;
+        padding: 35px;
         background-color: white;
     }
     .reference-user-image{
