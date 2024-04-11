@@ -7,7 +7,7 @@ import Homepage from "./pages/Homepage.js";
 
 export default (props) => {
   return ( 
-    <div>
+    <div className='container'>
     <Navigation />
     {props.children}
     </div>

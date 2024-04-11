@@ -35,10 +35,11 @@ useEffect(() => {
 }, []);
 
 return (
-    <div>
-        <h1><span className="color-pink">Industri</span>mekaniker med øye for rør</h1>
+    <div className="card-wrapper">
+        
 
-<div className="card-wrapper">
+<div className="wrapper">
+        <h2>20+ glade referanser - Se alle</h2>
         <div className="postCard">
             {allpostsData &&
                 allpostsData.map((post, index) => (
