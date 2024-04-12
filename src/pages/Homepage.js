@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import sanityClient from "../client.js";
 import Allposts from '../components/Allposts';
+import PrimaryButton from '../components/PrimaryButton';
+import SecondaryButton from '../components/SecondaryButton';
 import '../Styles/General.scss';
+import '../Styles/Frontpage.scss';
 
 
 export default function Homepage() {
@@ -39,13 +42,19 @@ return (
                         <div className='wrapper'>
                         <h1><span className="color-pink">{content.titlePink}</span>{content.h1Title}</h1>
                         <p>{content.ingress}</p>
+                        <PrimaryButton />
                         </div>
 
+                        <div className="[ wrapper-bannerimage ]">
+                         
                         {content.bannerBilde?.asset && <img className="[ bannerimage ]" src={content.bannerBilde.asset.url} alt="Main image" />}
+                        
 
+                        </div>
                         <div className='wrapper'>
                         <h2>{content.h2Undertittel}</h2>
                         <h3>{content.h3Undertittel}</h3>
+                        <SecondaryButton />
                         </div>
 
 
