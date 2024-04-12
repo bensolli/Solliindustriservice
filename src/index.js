@@ -21,7 +21,7 @@ root.render(
     <App>
       <Routes>
               <Route Component={Homepage} path="/" exact />
-              <Route Component={Omoss} path="/about" />
+              <Route Component={Omoss} path="/om" />
               <Route Component={Kontakt} path="/kontakt" />
               <Route Component={Onepost} path="/:slug" />
       </Routes>
