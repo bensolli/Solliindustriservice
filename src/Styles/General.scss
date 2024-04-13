@@ -1,3 +1,8 @@
+
+body {
+    overflow-x: hidden;
+}
+
 .container{
     margin-top: 10%;
 }
@@ -7,7 +12,24 @@
     margin: 10%;
 }
 
+h1{
+    font-size: 80px;
+    line-height: 78px;
+    margin-bottom: 20px;
+    margin-top: 30%;
+    font-weight: 700;
+}
+
 h2{
     font-size: 36px;
     font-weight: 400;
+}
+
+.ingress {
+    margin-bottom: 60px;
+}
+
+
+.color-pink{
+    color: #F7A9AB;
 }

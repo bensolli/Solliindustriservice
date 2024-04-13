@@ -38,10 +38,78 @@
 }
 
 
-.contactButton{
+.button{
     text-decoration: none;
-    padding:  20px 40px;
-    background: #FE8083;
-    color: #2F1312;
+    padding:  20px 30px;
     border-radius: 10px;
+    position: relative;
+    margin-left: 15px;
+    font-weight: 600;
+    font-size: 18px;
+
+    &:hover{
+        transform: rotate(2deg);
+        transition: ease-in-out  0.3s;
+    }
+
+    &-primary {
+        background: #FE8083;
+        color: #2F1312;
+
+        &::before, &::after{
+            background: #FE8083;
+        }
+    }
+
+    &-secondary {
+        background: white;
+        color: #0A1339;
+        filter: url(#round) 
+        drop-shadow(3px 0px 0px #000000) 
+        drop-shadow(0px 3px 0px #000000)
+        drop-shadow(-3px 0px 0px #000000) 
+        drop-shadow(0px -3px 0px #000000)
+        !important;
+
+        &::before, &::after{
+            background: white;
+            z-index: 1;
+        }
+    }
+
+    &::before{
+        content: "";
+        position: absolute;
+        width: 70px;
+        height: 100%;
+        left: -16px;
+        top: 0;
+        z-index: -1;
+        bottom: 0;
+        border-radius: 22px;
+        clip-path: polygon(25% 0%, 100% 0, 100% 100%, 25% 100%, 0% 50%);
+    }
+
+    &::after{
+        content: "";
+        position: absolute;
+        width: 70px;
+        height: 100%;
+        right: -16px;
+        top: 0;
+        z-index: -1;
+        bottom: 0;
+        border-radius: 22px;
+        clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+    }
+    
+    &[class] {
+        filter:url(#round);
+      }
+    
+}
+
+.roundedCorner  {
+    visibility: hidden; 
+    position: absolute;
 }

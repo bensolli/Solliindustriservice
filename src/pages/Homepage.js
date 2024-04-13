@@ -3,6 +3,7 @@ import sanityClient from "../client.js";
 import Allposts from '../components/Allposts';
 import PrimaryButton from '../components/PrimaryButton';
 import SecondaryButton from '../components/SecondaryButton';
+import BackgroundOverlay from '../components/FrontPageBackgroundOverlay';
 import '../Styles/General.scss';
 import '../Styles/Frontpage.scss';
 
@@ -39,22 +40,35 @@ return (
                     
                     <div key={index}>
                         
-                        <div className='wrapper'>
+                        <div className='frontpagecontent_wrapper'>
                         <h1><span className="color-pink">{content.titlePink}</span>{content.h1Title}</h1>
-                        <p>{content.ingress}</p>
+                        <p className="[ ingress ]">{content.ingress}</p>
                         <PrimaryButton />
                         </div>
 
-                        <div className="[ wrapper-bannerimage ]">
-                         
+       
+                       <BackgroundOverlay />
                         {content.bannerBilde?.asset && <img className="[ bannerimage ]" src={content.bannerBilde.asset.url} alt="Main image" />}
-                        
+             
+                        <svg className="[ roundedCorner ]" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                        <defs>
+                                <filter id="round">
+                                    <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />    
+                                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                                    <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+                                </filter>
+                            </defs>
+                        </svg>
 
-                        </div>
-                        <div className='wrapper'>
-                        <h2>{content.h2Undertittel}</h2>
-                        <h3>{content.h3Undertittel}</h3>
+
+
+
+                        <div className='frontpagecontent_wrapper'>
+                        <div className='frontpagecontent_wrapper_content'>
+                            <h2>{content.h2Undertittel}</h2>
+                            <h3>{content.h3Undertittel}</h3>
                         <SecondaryButton />
+                        </div>
                         </div>
 
 

@@ -4,6 +4,6 @@ import React from "react";
 
 export default function SecondaryButton() {
 
-    return ( <Link to="/om" className="[ contactButton ]">Om han</Link> ) 
+    return ( <Link to="/om" className="[ button button-secondary ]">Om han</Link> ) 
     
 }

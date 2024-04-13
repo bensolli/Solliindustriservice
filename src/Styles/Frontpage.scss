@@ -1,41 +1,43 @@
 
-.wrapper-bannerimage{
+  .frontpagecontent_wrapper{
+    width: 50%;
+    margin: 10%;
+
+    &_content{
+        margin-top: 45%;
+        width: 70%;
+    }
+  }
+  
+  
+  
+  
+  .bannerimage {
+    width: 67%;
     position: absolute;
-    right: 0;
     top: 0;
-    width: 342px;
-    overflow: hidden;
+    right: -11%;
     z-index: -2;
 }
 
 
-@property --r {
-    syntax: "<length>";
-    initial-value: 0px;
-    inherits: true;
+.frontpageOverlay{
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+}
+
+.cls-1 {
+    fill: url(#linear-gradient);
   }
-  
-  .bannerimage {
-    --r: 40px; /* the radius */
-    width: 700px;
-    aspect-ratio: 1/cos(30deg);
-    --_g:calc(tan(60deg)*var(--r)) bottom var(--r),#000 98%,#0000 101%;
-    -webkit-mask:
-      conic-gradient(from -30deg at 50% calc(200% - 3*var(--r)/2),#000 60deg,#0000 0)
-       0 100%/100% calc(100% - 3*var(--r)/2) no-repeat,
-      radial-gradient(var(--r) at 50% calc(2*var(--r)),#000 98%,#0000 101%),
-      radial-gradient(var(--r) at left  var(--_g)),
-      radial-gradient(var(--r) at right var(--_g));
-    clip-path: polygon(50% 0,100% 100%,0 100%);
-    transition: --r .6s;
-    cursor: pointer;
+
+  .cls-1, .cls-2 {
+    fill-rule: evenodd;
+    stroke-width: 0px;
   }
-  
-  
-  .wrapper-bannerimage img {
-    object-fit: cover;
-  }
-  
-  .wrapper-bannerimage img + .wrapper-bannerimage img {
-     margin-left: -80px;
+
+  .cls-2 {
+    fill: #fff;
   }
