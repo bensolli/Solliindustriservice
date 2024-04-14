@@ -40,9 +40,9 @@ return (
                 ))}
                                     
                         <ul className="[ navigation-container-list ]">
-                            <Link to="/" className="[ navigation-container__nav-element ]"><li>Home</li></Link>
-                            <Link to="/About" className="[ navigation-container__nav-element ]"><li>Om Han</li></Link>
-                            <Link to="/Kontakt" className="[ navigation-container__nav-element ]"><li>Kontakt</li></Link>  
+                            <Link to="/hva-han-gjor" className="[ navigation-container__nav-element ]"><li>Hva han rør</li></Link>
+                            <Link to="/om-han" className="[ navigation-container__nav-element ]"><li>Om Han</li></Link>
+                            <Link to="/kontakt" className="[ navigation-container__nav-element ]"><li>Kontakt</li></Link>  
                         </ul>
         </div>
         </div>

@@ -6,6 +6,7 @@ import SecondaryButton from '../components/SecondaryButton';
 import BackgroundOverlay from '../components/FrontPageBackgroundOverlay';
 import '../Styles/General.scss';
 import '../Styles/Frontpage.scss';
+import CheckCircleOutlined from '@mui/icons-material/CheckCircleOutlined';
 
 
 export default function Homepage() {
@@ -25,6 +26,7 @@ useEffect(() => {
             },
             h2Undertittel,
             h3Undertittel,
+            erfaring,
         }`
     )
     .then((data) => setAllFrontpage(data))
@@ -67,6 +69,13 @@ return (
                         <div className='frontpagecontent_wrapper_content'>
                             <h2>{content.h2Undertittel}</h2>
                             <h3>{content.h3Undertittel}</h3>
+                
+                <ul className="[ erfaringListe ]">
+                {content.erfaring &&
+                content.erfaring.map((erfaring, index) => (   
+                <li key={index}><CheckCircleOutlined/>{erfaring}</li>       
+                ))}
+                </ul>
                         <SecondaryButton />
                         </div>
                         </div>
