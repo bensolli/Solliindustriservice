@@ -41,8 +41,8 @@ export default defineType({
       },
 
       {
-        title: 'erfaring',
-        name: 'Erfaring',
+        name: 'erfaring',
+        title: 'Erfaring',
         type: 'array',
         of: [{type: 'string'}]
       }

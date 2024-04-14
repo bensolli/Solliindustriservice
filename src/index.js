@@ -11,6 +11,7 @@ import Omoss from './pages/Omoss';
 import Onepost from "./components/Onepost";
 import Homepage from './pages/Homepage';
 import Kontakt from './pages/Kontakt';
+import HvaHanGjor from './pages/HvaHanGjor';
 
 //import * as serviceWorker from './serviceWorker';
 
@@ -21,7 +22,8 @@ root.render(
     <App>
       <Routes>
               <Route Component={Homepage} path="/" exact />
-              <Route Component={Omoss} path="/om" />
+              <Route Component={HvaHanGjor} path="/hva-han-gjor" />
+              <Route Component={Omoss} path="/om-han" />
               <Route Component={Kontakt} path="/kontakt" />
               <Route Component={Onepost} path="/:slug" />
       </Routes>

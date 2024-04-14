@@ -41,3 +41,21 @@
   .cls-2 {
     fill: #fff;
   }
+
+
+  .erfaringListe{
+    list-style-type:none;
+    padding: 0;
+    margin-bottom: 70px;
+
+    li {
+        display: flex;
+        padding: 10px 10px 10px 0;
+        font-size: 18px;
+
+        svg {
+            margin-right: 10px;
+        }
+    }
+
+  }
