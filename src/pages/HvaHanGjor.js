@@ -1,9 +1,15 @@
 import React from 'react';
+import Gallery from '../components/Gallery';
 
 
 
 export default function Omoss() {
     return (
-        <h2>Han gjør masse rart</h2>
+        <div>
+        <h1>Han gjør masse rart</h1>
+
+       
+        <Gallery />  
+        </div>
     );
 }

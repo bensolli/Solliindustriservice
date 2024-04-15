@@ -1,0 +1,42 @@
+.project-wrapper{
+    position: relative;
+    background: #B1E2F4;
+    display: inline-flex;
+    height: 400px;
+    width: 100%;
+
+
+    &-left {
+        width: 50%;
+        position: relative;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+            height: 100%;
+            position: absolute;
+        }
+
+        &-title{
+            color: white;
+            &-name{
+                position: absolute;
+                left: 20px;
+                bottom: 20px;
+            }
+
+            &-navigation{
+                position: absolute;
+                right: 20px;
+                bottom: 20px;
+            }
+
+        }
+
+    }
+
+    &-right {
+        width: 50%;
+        padding: 20px;
+    }
+}
