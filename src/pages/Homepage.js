@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import sanityClient from "../client.js";
 import Allposts from '../components/Allposts';
+import GalleryHeadline from '../components/GalleryHeadline';
 import PrimaryButton from '../components/PrimaryButton';
 import SecondaryButton from '../components/SecondaryButton';
 import BackgroundOverlay from '../components/FrontPageBackgroundOverlay';
@@ -84,7 +85,7 @@ return (
                     </div>
                     
                 ))}
-             
+<GalleryHeadline />          
 <Allposts />
 </div>
 
