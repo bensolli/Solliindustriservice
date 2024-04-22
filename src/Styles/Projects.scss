@@ -9,6 +9,7 @@
     &-left {
         width: 50%;
         position: relative;
+        overflow: hidden;
 
         img {
             width: 100%;
@@ -16,6 +17,17 @@
             height: 100%;
             position: absolute;
         }
+
+        &-link{
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            z-index: 3;
+        }
+
+
 
         &::before{
             content:"";
@@ -34,24 +46,53 @@
            
             &-name{
                 position: absolute;
-                left: 20px;
-                bottom: 20px;
+                left: 25px;
+                bottom: 10px;
                 z-index: 3;
+                width: 200px;
             }
+
+            .lesMere{
+                display: none;
+            }
+
+
+
 
             &-navigation{
                 position: absolute;
-                right: 20px;
-                bottom: 20px;
+                right: 25px;
+                bottom: 15px;
                 z-index: 3;
             }
 
+            svg{
+                border: 2px solid white;
+                border-radius: 100%;
+                margin-left: 10px;
+    
+                &:hover{
+                    background: white;
+                    color: black;
+                    transform: scale(0.98);
+                    transition: ease-in-out .3s;
+                }
+            }
         }
+
+        &:hover img,  &:hover .lesMere{
+            display:inline;
+            transform: scale(1.2);
+            transition: ease-in-out 0.5s;
+         }
 
     }
 
     &-right {
         width: 50%;
         padding: 20px;
+        &-content{
+            padding: 60px;
+        }
     }
 }

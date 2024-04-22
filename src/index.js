@@ -22,6 +22,7 @@ root.render(
     <App>
       <Routes>
               <Route Component={Homepage} path="/" exact />
+              <Route Component={HvaHanGjor} path="/hva-han-gjor/:companytitle" />
               <Route Component={HvaHanGjor} path="/hva-han-gjor" />
               <Route Component={Omoss} path="/om-han" />
               <Route Component={Kontakt} path="/kontakt" />

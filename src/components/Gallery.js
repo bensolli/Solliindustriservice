@@ -31,10 +31,18 @@ export default () => {
 
     useEffect(() => {
         if (allprojectData) {
-            setPage(Math.floor(Math.random() * allprojectData.length));
+            const pathname = window.location.pathname;
+            const formattedProjectTitle = pathname.split('/').pop().replace(/-/g, ' ');
+
+            const foundIndex = allprojectData.findIndex(project => project.companytitle === formattedProjectTitle);
+
+            if (foundIndex !== -1) {
+                setPage(foundIndex);
+            } else {
+                setPage(Math.floor(Math.random() * allprojectData.length));
+            }
         }
     }, [allprojectData]);
-    console.log(page); 
 
     const nextSlide = () => {
         setPage((page + 1) % (allprojectData.length || 1));
@@ -49,38 +57,29 @@ export default () => {
     }
 
     return (
-
-            <div className="wrapper">
-                
-                    {allprojectData.map((project, index) => (
-                        <div key={index} style={{ display: index === page ? 'block' : 'none' }} >
-                        <div className="[ project-wrapper ]">
+        <div className="wrapper">
+            {allprojectData.map((project, index) => (
+                <div key={index} style={{ display: index === page ? 'block' : 'none' }} >
+                    <div className="[ project-wrapper ]">
                         <div className="[ project-wrapper-left ]">
-                            
                             {project.mainImage?.asset && <img src={project.mainImage.asset.url} alt="Logo image" />}
-                            
                             <div className="project-wrapper-left-title">
-                            
-                            <div className="[ project-wrapper-left-title-name ]">
-                            <p>{project.companytitle}</p>
-                            </div>
-                            <div className="[ project-wrapper-left-title-navigation ]">
-                            <NavigateBeforeRoundedIcon onClick={previousSlide}/>
-                            <NavigateNextRoundedIcon onClick={nextSlide}/>
-                            </div>
-
+                                <div className="[ project-wrapper-left-title-name ]">
+                                    <p>{project.companytitle}</p>
+                                </div>
+                                <div className="[ project-wrapper-left-title-navigation ]">
+                                    <NavigateBeforeRoundedIcon onClick={previousSlide}/>
+                                    <NavigateNextRoundedIcon onClick={nextSlide}/>
+                                </div>
                             </div>
                         </div>
                         <div className="[ project-wrapper-right ]">
                             <h2>{project.title}</h2>
                             {project.firstChild?.text && <p>{project.firstChild.text}</p>}
                         </div>
-                        </div>
-                        </div>
-                    ))}
-
-                
-            </div>
-   
+                    </div>
+                </div>
+            ))}
+        </div>
     );
 };
