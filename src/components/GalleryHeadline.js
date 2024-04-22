@@ -65,7 +65,7 @@ export default () => {
                             {project.mainImage?.asset && <img src={project.mainImage.asset.url} alt="Logo image" />}
                             <div className="project-wrapper-left-title">
                                 <div className="[ project-wrapper-left-title-name ]">
-                                    <p>{index}/{allprojectData.length}  {project.companytitle} <span className="lesMere"> - Les mere</span></p>
+                                    <p>{index + 1}/{allprojectData.length}  {project.companytitle} <span className="lesMere"> - Les mere</span></p>
                                 </div>
                                 <div className="[ project-wrapper-left-title-navigation ]">
                                     <NavigateBeforeRoundedIcon onClick={previousSlide}/>
