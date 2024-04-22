@@ -9,6 +9,9 @@ export default () => {
     const [allprojectData, setAllProjects] = useState(null);
     const [page, setPage] = useState(0);
 
+
+
+
     useEffect(() => {
         sanityClient.fetch(
             `*[_type == "gallery"]{
@@ -24,6 +27,16 @@ export default () => {
         .then((data) => setAllProjects(data))
         .catch(console.error);
     }, []);
+
+
+
+    useEffect(() => {
+        if (allprojectData) {
+            setPage(Math.floor(Math.random() * allprojectData.length));
+        }
+    }, [allprojectData]);
+    console.log(page); 
+  
 
     const nextSlide = () => {
         setPage((page + 1) % (allprojectData.length || 1));

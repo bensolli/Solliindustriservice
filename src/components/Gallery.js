@@ -29,6 +29,13 @@ export default () => {
         .catch(console.error);
     }, []);
 
+    useEffect(() => {
+        if (allprojectData) {
+            setPage(Math.floor(Math.random() * allprojectData.length));
+        }
+    }, [allprojectData]);
+    console.log(page); 
+
     const nextSlide = () => {
         setPage((page + 1) % (allprojectData.length || 1));
     };
