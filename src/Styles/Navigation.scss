@@ -23,11 +23,24 @@
         display: inline-flex;
         text-decoration: none;
         list-style-type: none;
-    }
 
-    &__nav-element:hover{
-        text-decoration: underline;
-        transition: ease-in-out 0.3s;
+    li{position: relative;}
+
+       li::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background: #0A1339;
+            height: 1px;
+            width: 0%;
+        }
+
+        li:hover::before{
+            width: 100%;
+            transition: ease-in-out 0.3s;
+            font-weight: 600;
+        }
     }
 
     &-logo{
@@ -40,17 +53,12 @@
 
 .button{
     text-decoration: none;
-    padding:  20px 30px;
+    padding:  15px 30px;
     border-radius: 10px;
     position: relative;
     margin-left: 15px;
     font-weight: 600;
     font-size: 18px;
-
-    &:hover{
-        transform: rotate(2deg);
-        transition: ease-in-out  0.3s;
-    }
 
     &-primary {
         background: #FE8083;
@@ -59,22 +67,60 @@
         &::before, &::after{
             background: #FE8083;
         }
+
+        &:hover{
+            background: #ffabad;
+            transition: ease-in-out 0.3s;
+        }
+
     }
 
     &-secondary {
-        background: white;
-        color: #0A1339;
-        filter: url(#round) 
-        drop-shadow(3px 0px 0px #000000) 
-        drop-shadow(0px 3px 0px #000000)
-        drop-shadow(-3px 0px 0px #000000) 
-        drop-shadow(0px -3px 0px #000000)
-        !important;
+        position: relative;
 
-        &::before, &::after{
-            background: white;
-            z-index: 1;
-        }
+            background: transparent;
+            color: #0A1339;
+            padding: 15px 40px;
+            font-weight: 600;
+            font-size: 18px;
+            text-align: center;
+            text-decoration: none;
+            border: 2px solid #0A1339;
+            border-radius: 10px 15px 10px 15px;
+            outline: 0;
+            display: inline-block;
+            transform: skew(-21deg);
+
+            & > span {
+                display: inline-block;
+                transform: skew(21deg);
+              }
+
+            &:hover {
+                color: white;
+                background: #B1E2F4;
+                transition: ease-in-out 0.2s;
+            }
+
+
+              &::before {
+                content: "";
+                position: absolute;
+                background: #0A1339;
+                width: 0%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                border-radius: 7px 13px 7px 13px;
+              }
+
+              &:hover::before{
+                width: 100%;
+                transition: ease-in-out 0.4s;
+              }
+
+
     }
 
     &::before{
@@ -102,6 +148,7 @@
         border-radius: 22px;
         clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
     }
+
     
     &[class] {
         filter:url(#round);
