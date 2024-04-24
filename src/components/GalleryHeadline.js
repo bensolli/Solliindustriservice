@@ -61,7 +61,7 @@ export default () => {
                 <div key={index} style={{ display: index === page ? 'block' : 'none' }} >
                     <div className="[ project-wrapper ]">
                         <div className="[ project-wrapper-left ]">
-                            <Link to={`/hva-han-gjor/${formattedCompanyTitles[page]}`} className="[ project-wrapper-left-link ]"></Link>
+                            <Link to={`/hva-han-gjor/#prosjekter/${formattedCompanyTitles[page]}`} className="[ project-wrapper-left-link ]"></Link>
                             {project.mainImage?.asset && <img src={project.mainImage.asset.url} alt="Logo image" />}
                             <div className="project-wrapper-left-title">
                                 <div className="[ project-wrapper-left-title-name ]">
@@ -76,7 +76,10 @@ export default () => {
                         <div className="[ project-wrapper-right ]">
                             <div className="[ project-wrapper-right-content ]">
                                 <h2>Over et tiår med suksé historier</h2>
-                                <SecondaryButton />
+                                <SecondaryButton
+                                    secondaryButton={`Hva han rør`}
+                                    link={`/hva-han-gjor/#prosjekter`}
+                                />
                             </div>
                         </div>
                     </div>

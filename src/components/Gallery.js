@@ -10,24 +10,41 @@ export default () => {
 
     useEffect(() => {
         sanityClient.fetch(
-            `*[_type == "gallery"]{
-                title,
-                companytitle,
-                mainImage{
-                    asset->{
-                        _id,
-                        url
-                    }
-                },
-                "firstChild": body[0].children[0] {
-                    text,
-                    _key
-                },
-            }`
+          `*[_type == "gallery"]{
+              title,
+              companytitle,
+              mainImage{
+                  asset->{
+                      _id,
+                      url
+                  }
+              },
+              dateRange,
+              body,
+          }`
         )
-        .then((data) => setAllProjects(data))
+        .then((data) => {
+          // Convert dates to text format
+          const projectsWithFormattedDates = data.map(project => ({
+            ...project,
+            dateRange: {
+              from: new Date(project.dateRange.from).toLocaleDateString('nb-NO', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+              }),
+              to: new Date(project.dateRange.to).toLocaleDateString('nb-NO', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+              })
+            }
+          }));
+          setAllProjects(projectsWithFormattedDates);
+        })
         .catch(console.error);
-    }, []);
+      }, []);
+      
 
     useEffect(() => {
         if (allprojectData) {
@@ -57,25 +74,26 @@ export default () => {
     }
 
     return (
-        <div className="wrapper">
+        <div className="wrapper" id="prosjekter">
             {allprojectData.map((project, index) => (
                 <div key={index} style={{ display: index === page ? 'block' : 'none' }} >
                     <div className="[ project-wrapper ]">
                         <div className="[ project-wrapper-left ]">
                             {project.mainImage?.asset && <img src={project.mainImage.asset.url} alt="Logo image" />}
-                            <div className="project-wrapper-left-title">
-                                <div className="[ project-wrapper-left-title-name ]">
-                                    <p>{project.companytitle}</p>
-                                </div>
-                                <div className="[ project-wrapper-left-title-navigation ]">
-                                    <NavigateBeforeRoundedIcon onClick={previousSlide}/>
-                                    <NavigateNextRoundedIcon onClick={nextSlide}/>
-                                </div>
-                            </div>
+                        
+
+                    
                         </div>
                         <div className="[ project-wrapper-right ]">
-                            <h2>{project.title}</h2>
-                            {project.firstChild?.text && <p>{project.firstChild.text}</p>}
+                            <div className="[ project-wrapper-right-content ]">
+                            <p>{project.dateRange.from} - {project.dateRange.to}</p>
+                            <h2>{project.companytitle}</h2>
+                            <p>{project.body}</p>
+                            <div className="[ project-wrapper-left-title-navigation ]">
+                                    <NavigateBeforeRoundedIcon onClick={previousSlide}/>
+                                    <NavigateNextRoundedIcon onClick={nextSlide}/>
+                            </div>
+                            </div>
                         </div>
                     </div>
                 </div>

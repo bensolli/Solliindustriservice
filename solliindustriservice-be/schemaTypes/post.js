@@ -37,8 +37,12 @@ export default defineType({
     }),*/
     defineField({
       name: 'body',
-      title: 'Body',
-      type: 'blockContent',
+      title: 'Quote (max 30 ord)',
+      type: 'text',
+      validation: Rule => Rule.custom(text => {
+        const wordCount = text.trim().split(/\s+/).length;
+        return wordCount <= 30;
+      }).warning('Text must be no more than 150 words'),
     }),
     defineField({
       name: 'mainImage',
