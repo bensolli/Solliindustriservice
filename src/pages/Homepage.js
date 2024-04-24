@@ -77,7 +77,13 @@ return (
                 <li key={index}><CheckCircleOutlined/>{erfaring}</li>       
                 ))}
                 </ul>
-                        <SecondaryButton />
+                       
+                        <SecondaryButton
+                        secondaryButton={`Om han`}
+                        link={`/om-han`}
+                        />
+
+
                         </div>
                         </div>
 
@@ -86,7 +92,10 @@ return (
                     
                 ))}
 <GalleryHeadline />          
-<Allposts />
+<Allposts 
+  numberPosts={true}
+  linkAllPosts={true}  
+/>
 </div>
 
 ) 

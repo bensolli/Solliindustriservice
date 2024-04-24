@@ -1,5 +1,6 @@
 import React from 'react';
 import Gallery from '../components/Gallery';
+import Allposts from '../components/Allposts';
 
 
 
@@ -9,7 +10,11 @@ export default function Omoss() {
         <h1>Han gjør masse rart</h1>
 
        
-        <Gallery />  
+        <Gallery /> 
+        <Allposts 
+            numberPosts={false}  
+            linkAllPosts={false} 
+        />
         </div>
     );
 }

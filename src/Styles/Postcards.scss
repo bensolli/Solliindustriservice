@@ -9,13 +9,15 @@
 .postCard{
     position: relative;
     width: 100%;
-    display:inline-flex;
 
     div{
-        width: 33%;
+        width: 22%;
+        min-height: 401px;
+        vertical-align: top;
         margin: 10px;
         padding: 35px;
         background-color: white;
+        display: inline-block;
     }
     .reference-user-image{
         width: 80px;

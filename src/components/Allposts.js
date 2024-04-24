@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
+import { Link } from "react-router-dom";
 import sanityClient from "../client.js";
 import '../Styles/Postcards.scss';
 
-export default function Allposts() {
+export default function Allposts({numberPosts, linkAllPosts}) {
 const [allpostsData, setAllPosts] = useState(null);
 
 useEffect(() => {
@@ -12,10 +13,7 @@ useEffect(() => {
             title,
             workTitle,
             slug,
-            "firstChild": body[0].children[0] {
-                text,
-                _key
-              },
+            body,
             mainImage{
                 asset->{
                     _id,
@@ -30,16 +28,32 @@ useEffect(() => {
             }
         }`
     )
-    .then((data) => setAllPosts(data))
+    .then((data) => {
+        if (numberPosts && data) {
+            setAllPosts(data.slice(0, 3));
+        } else {
+            setAllPosts(data);
+        }
+    })
     .catch(console.error);
-}, []);
+}, [numberPosts]);
+
+
+console.log(allpostsData);
 
 return (
-    <div className="card-wrapper">
+    <div className="card-wrapper" id="referanser">
         
 
 <div className="wrapper">
-        <h2>20+ glade referanser - Se alle</h2>
+        <h2>20+ glade referanser
+
+        {linkAllPosts ? (
+             <Link to={`/hva-han-gjor/#referanser`}>Se alle</Link>
+        ) : null}
+
+        </h2>
+
         <div className="postCard">
             {allpostsData &&
                 allpostsData.map((post, index) => (
@@ -48,7 +62,7 @@ return (
                     <div key={index}>
                         <img className="[ reference-user-image ]" src={post.mainImage.asset.url} alt="Main image" />
 
-                        {post.firstChild?.text && <p>{post.firstChild.text}</p>}
+                        <p>{post.body}</p>
                         {post.logoImage?.asset && <img className="[ reference-logo-image ]" src={post.logoImage.asset.url} alt="Logo image" />}
                    
                         
