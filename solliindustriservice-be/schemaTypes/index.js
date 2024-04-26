@@ -5,5 +5,7 @@ import author from './author'
 import siteSettings from './siteSettings'
 import frontPage from './frontpage'
 import gallery from './gallery'
+import about from './about'
+import contact from './contact'
 
-export const schemaTypes = [frontPage, gallery, post, author, category, blockContent, siteSettings]
+export const schemaTypes = [frontPage, about, contact, gallery, post, author, category, blockContent, siteSettings]

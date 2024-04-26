@@ -16,5 +16,12 @@ export const myStructure = (S) =>
             .schemaType('frontPage')
             .documentId('frontPage')
         ),
-      ...S.documentTypeListItems().filter(listItem => !['siteSettings', 'frontPage'].includes(listItem.getId()))
+        S.listItem()
+        .title('Om han')
+        .child(
+          S.document()
+            .schemaType('about')
+            .documentId('about')
+        ),
+      ...S.documentTypeListItems().filter(listItem => !['siteSettings', 'frontPage', 'about'].includes(listItem.getId()))
     ]);
