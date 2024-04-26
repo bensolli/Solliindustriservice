@@ -4,6 +4,7 @@ import Allposts from '../components/Allposts';
 import GalleryHeadline from '../components/GalleryHeadline';
 import PrimaryButton from '../components/PrimaryButton';
 import SecondaryButton from '../components/SecondaryButton';
+import Linkedinbutton from "../components/Linkedinbutton.js";
 import BackgroundOverlay from '../components/FrontPageBackgroundOverlay';
 import '../Styles/General.scss';
 import '../Styles/Frontpage.scss';
@@ -46,7 +47,15 @@ return (
                         <div className='frontpagecontent_wrapper'>
                         <h1><span className="color-pink">{content.titlePink}</span>{content.h1Title}</h1>
                         <p className="[ ingress ]">{content.ingress}</p>
-                        <PrimaryButton />
+
+                            <div className="[ button-wrapper ]">
+                                <PrimaryButton />
+                                <SecondaryButton
+                                    secondaryButton={`Hva han rør`}
+                                    link={`/hva-han-gjor`}
+                                />
+                            </div>
+
                         </div>
 
        
@@ -78,11 +87,15 @@ return (
                 ))}
                 </ul>
                        
+                       
+
+                        <div className="[ button-wrapper ]">
                         <SecondaryButton
                         secondaryButton={`Om han`}
                         link={`/om-han`}
                         />
-
+                                <Linkedinbutton />
+                        </div>
 
                         </div>
                         </div>
@@ -91,6 +104,7 @@ return (
                     </div>
                     
                 ))}
+
 <GalleryHeadline />          
 <Allposts 
   numberPosts={true}
