@@ -23,6 +23,11 @@ export default defineType({
         hotspot: true,
       },
     }),
+    defineField({
+      name: 'linkedin',
+      title: 'Link til Linkedin profil',
+      type: 'string',
+    }),
 
   ],
 })
